@@ -1,0 +1,39 @@
+#include<utility>
+#include <math.h>
+
+using std::pair;
+
+struct db_head
+{
+        
+        off_t emptys[1024];
+};
+
+template <typename key, typename value> 
+struct node_dump
+{
+        struct store_struct { pair<key , value>, off_t left_child };
+        off_t rightmost_child;
+
+        off_t max;
+
+        usigned long num_store = floor(double(8192)/sizeof(store_struct));
+        store_struct[num_store];
+};
+
+template <typename key, typename value>
+struct db_node_ptr {
+        off_t file_locate;
+        store_struct * max;
+        store_struct * min;
+};
+
+class db()
+{
+        private:
+                db_node max;
+                db_node min;
+        public:
+                
+}
+

@@ -1,0 +1,15 @@
+//b树节点
+template <typename key, typename value> 
+struct node_dump
+{
+        off_t leftmost_child;       //最左边的左孩子
+        unsigned short max;      //node中最大值的编号
+        store_struct dumps[10];   //node中存储的结构；
+};
+
+template <typename key, typename value>
+struct db_node_ptr {
+        off_t file_locate;
+        store_struct * max;
+        store_struct * min;
+};
